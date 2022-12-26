@@ -1,0 +1,14 @@
+info:
+  name: sqlite
+  description: Just SQLite module
+  version: 0.0.1
+  author: exact
+  url: https://justjs.dev
+  repository: https://github.com/exact-rs/modules/sqlite
+  license: mit
+  index: db.js
+registry:
+  public: true
+tasks:
+tests:
+dependencies:

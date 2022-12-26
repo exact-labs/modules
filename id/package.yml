@@ -1,0 +1,14 @@
+info:
+  name: id
+  description: Just id module
+  version: 0.0.1
+  author: exact
+  url: https://justjs.dev
+  repository: https://github.com/exact-rs/modules/id
+  license: mit
+  index: id.js
+registry:
+  public: true
+tasks:
+tests:
+dependencies:
