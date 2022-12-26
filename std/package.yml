@@ -1,7 +1,7 @@
 info:
   name: std
   description: Just standard library
-  version: 0.0.1
+  version: 0.0.2
   author: exact
   url: https://justjs.dev
   repository: https://github.com/exact-rs/modules/std
