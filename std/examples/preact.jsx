@@ -27,14 +27,18 @@ const Headers = ({ styles, children }) => (
 
 const Box = ({ type, children }) => <div class={`box box-${type}`}>{children}</div>;
 
-let html = await fs.read.file('styles.css').then((styles) => {
-	return render(
-		<Headers styles={styles}>
-			<Box type='open'>
-				<Fox name='Fuzzy' />
-			</Box>
-		</Headers>
-	);
-});
+const styles = `.fox {
+   color: rgb(255, 124, 57);
+   font-family: sans-serif;
+   font-size: 2rem;
+}`;
+
+return render(
+	<Headers styles={styles}>
+		<Box type='open'>
+			<Fox name='Fuzzy' />
+		</Box>
+	</Headers>
+);
 
 server.string(html, 'text/html; charset=UTF-8');
