@@ -1,10 +1,10 @@
 info:
   name: jsondb
   description: A simple, no-frills, JSON storage engine for Just
-  version: 0.0.1
+  version: 0.0.2
   author: exact
   url: https://justjs.dev
-  repository: https://github.com/exact-rs/modules/json_db
+  repository: https://github.com/exact-rs/modules/jsondb
   license: mit
   index: index.js
 registry:

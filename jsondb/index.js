@@ -113,7 +113,6 @@ export class JSONdb {
 	constructor(filePath, options) {
 		(async () => {
 			await init(filePath, options);
-			await sleep(500);
 		})();
 
 		var functions = {
