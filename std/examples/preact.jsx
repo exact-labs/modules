@@ -33,12 +33,13 @@ const styles = `.fox {
    font-size: 2rem;
 }`;
 
-return render(
-	<Headers styles={styles}>
-		<Box type='open'>
-			<Fox name='Fuzzy' />
-		</Box>
-	</Headers>
+server.string(
+	render(
+		<Headers styles={styles}>
+			<Box type='open'>
+				<Fox name='Fuzzy' />
+			</Box>
+		</Headers>
+	),
+	'text/html; charset=UTF-8'
 );
-
-server.string(html, 'text/html; charset=UTF-8');
