@@ -1,0 +1,15 @@
+info:
+  name: go
+  description: Golang interpreter for Just
+  version: 0.0.2
+  author: exact
+  url: https://justjs.dev
+  repository: https://github.com/exact-rs/modules/go
+  license: mit
+  index: index.js
+registry:
+  public: true
+  group: both
+tasks:
+tests:
+dependencies:
