@@ -45,7 +45,7 @@ const init = async (filePath, options) => {
 	if (stats.size > 0) {
 		let data;
 		try {
-			data = await fs.file.read(filePath);
+			data = await fs.file.read(filePath, 'utf8');
 		} catch (err) {
 			throw err;
 		}
@@ -80,19 +80,13 @@ const deleteAll = () => {
 };
 
 const sync = async () => {
-	if (global.options && global.options.asyncWrite) {
-		await fs.file.write(global.file_path, global.options.stringify(global.storage, null, global.options.jsonSpaces), (err) => {
-			if (err) throw err;
-		});
-	} else {
-		try {
-			await fs.file.write(global.file_path, global.options.stringify(global.storage, null, global.options.jsonSpaces));
-		} catch (err) {
-			if (err.code === 'EACCES') {
-				throw new Error(`Cannot access path "${global.file_path}".`);
-			} else {
-				throw new Error(`Error while writing to path "${global.file_path}": ${err}`);
-			}
+	try {
+		await fs.file.write(global.file_path, global.options.stringify(global.storage, null, global.options.jsonSpaces), 'utf8');
+	} catch (err) {
+		if (err.code === 'EACCES') {
+			throw new Error(`Cannot access path "${global.file_path}".`);
+		} else {
+			throw new Error(`Error while writing to path "${global.file_path}": ${err}`);
 		}
 	}
 };
